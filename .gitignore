@@ -1,0 +1,9 @@
+# Node - Modules
+front-end/assets/node_modules
+front-end/assets/package-lock.json
+
+# Pastas geradas
+front-end/js
+front-end/css
+front-end/images
+front-end/fonts

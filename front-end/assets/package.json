@@ -1,0 +1,30 @@
+{
+  "name": "ProjetoIntegrador",
+  "version": "1.0.0",
+  "description": "Json para o trabalho da faculdade",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "MODE=development gulp",
+    "dev:win": "set MODE=development && gulp",
+    "prod": "MODE=production gulp"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.6.4",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.13.1",
+    "webpack": "^4.41.5",
+    "webpack-stream": "^5.2.1"
+  }
+}
