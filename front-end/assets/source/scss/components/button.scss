@@ -1,1 +1,16 @@
-.button {  }
+.button-default {
+  padding: 8px 24px;
+  font-size: 14px;
+  text-decoration: none;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  > span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

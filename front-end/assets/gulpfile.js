@@ -40,7 +40,7 @@ const js = () =>
         }
       })
     )
-    .pipe(gulp.dest('../static/js'))
+    .pipe(gulp.dest('../js'))
 
 // Sass to css
 const scss = () => 
@@ -50,15 +50,15 @@ const scss = () =>
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('../static/css'))
+    .pipe(gulp.dest('../css'))
 
 // Fonts
 const fonts = () =>
-  gulp.src('./source/fonts/**/*').pipe(gulp.dest('../static/fonts'))
+  gulp.src('./source/fonts/**/*').pipe(gulp.dest('../fonts'))
 
 // Images
 const images = () =>
-  gulp.src('./source/images/**/*').pipe(gulp.dest('../static/images'))
+  gulp.src('./source/images/**/*').pipe(gulp.dest('../images'))
 
 gulp.watch(['./source/js'], js)
 gulp.watch(['./source/scss'], scss)

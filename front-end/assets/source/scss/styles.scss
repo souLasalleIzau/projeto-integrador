@@ -15,9 +15,11 @@
 @import './commons/background-image';
 
 // Components
-@import './commons/header';
-@import './commons/button';
-@import './commons/footer';
+@import './components/header';
+@import './components/button';
+@import './components/input-default';
+@import './components/select-default';
+@import './components/footer';
 
 // Modules
 @import './modules/home';

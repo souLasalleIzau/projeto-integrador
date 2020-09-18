@@ -1,0 +1,110 @@
+.input-default {
+  position: relative;
+
+  .input-wrap {
+    position: relative;
+
+    .input-field {
+      display: block;
+      width: 100%;
+      font-size: $font-size;
+      color: map-get($color, primary);
+      border-style: solid;
+      border-color: map-get($color, secondary);;
+
+      &.error {
+        border-color: red;
+      }
+    }
+
+    input.input-field {
+      height: 64px;
+    }
+
+    > label.error {
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 300;
+      color: red;
+    }
+  }
+
+  &.input-primary {
+    .input-wrap {
+      .input-label {
+        position: absolute;
+        font-size: $font-size;
+        color: map-get($color, primary);
+        transform: translateY(28px);
+        transform-origin: 0;
+        transition: transform 0.35s linear;
+
+        &.active {
+          transform: translate(0) scale(0.8);
+        }
+      }
+
+      .input-field {
+        padding: 24px 16px 16px 0;
+        border-width: 0 0 1px 0;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.input-checkbox {
+  > label {
+    display: flex;
+    align-items: flex-start;
+
+    > input {
+      display: none;
+
+      &:checked {
+        + .input-checkbox-fake {
+          background: map-get($color, primary);
+        }
+      }
+    }
+
+    .input-checkbox-fake {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+      top: 2px;
+      margin-right: 16px;
+      border: 1px solid map-get($color, primary);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.35s linear;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 5px;
+        border-width: 0 0 2px 2px;
+        border-style: solid;
+        border-color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -75%) rotate(-45deg);
+      }
+    }
+
+    .label-checkbox-fake {
+      font-size: $font-size;
+      color: map-get($color, primary);
+
+      small {
+        font-size: 0.75em;
+      }
+    }
+  }
+}
