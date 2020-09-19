@@ -1,0 +1,39 @@
+form {
+  > fieldset {
+    .input-row {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: -16px;
+
+      &.input-row:last-child {
+        margin-top: 24px;
+
+        .group-button {
+          > ul {
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      .input-column {
+        width: 100%;
+        padding: 16px;
+      }
+      
+      @media screen and (min-width: $tablet-portrait-up) {
+        &.two-columns {
+          .input-column {
+            width: 50%;
+          }
+        }
+  
+        &.three-columns {
+          .input-column {
+            width: 33.33%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,16 +1,54 @@
 .button-default {
-  padding: 8px 24px;
-  font-size: 14px;
+  display: inline-block;
+  height: 100%;
+  padding: 8px 32px;
+  font-size: $font-size;
   text-decoration: none;
   border-width: 2px;
   border-style: solid;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.35s linear, color 0.35s linear, border 0.35s linear;
   
   > span {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.button-fill-primary {
+  color: white;
+  background: map-get($color, primary);
+  border-color: map-get($color, primary);
+
+  &:hover {
+    color: map-get($color, primary);
+    background: transparent;
+  }
+}
+
+.button-stroke-primary {
+  color: map-get($color, primary);
+  background: transparent;
+  
+  &:hover {
+    color: white;
+    background: map-get($color, primary);
+    border-color: map-get($color, primary);
+  }
+}
+
+.group-button {
+  > ul {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: -8px;
+
+    > li {
+      padding: 8px;
+    }
   }
 }

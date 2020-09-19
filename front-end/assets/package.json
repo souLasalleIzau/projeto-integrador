@@ -17,13 +17,17 @@
     "babel-loader": "^8.0.6",
     "core-js": "^3.6.4",
     "cssnano": "^4.1.10",
+    "datatables": "^1.10.18",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "jquery": "^3.5.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "jquery-validation": "^1.19.2",
     "node-sass": "^4.13.1",
+    "select2": "^4.0.13",
     "webpack": "^4.41.5",
     "webpack-stream": "^5.2.1"
   }

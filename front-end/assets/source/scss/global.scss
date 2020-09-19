@@ -1,8 +1,25 @@
 body {
-  font-family: '';
+  font-family: $roboto-font;
   font-size: $font-size;
 }
 
 #app {
-  
+  position: relative;
+
+  .screen-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .wrap {
+      width: 100%;
+      padding: 80px 0;
+    }
+  }
+
+  .logout {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 }

@@ -1,0 +1,25 @@
+.section-header {
+  text-align: center;
+  
+  .header-title {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.25em;
+  }
+
+  @media screen and (min-width: $tablet-portrait-up){
+    margin-bottom: 56px;
+
+    .header-title {
+      font-size: $font-title-desktop;
+    }
+  }
+
+  @media screen and (max-width: $tablet-portrait-down){
+    margin-bottom: 32px;
+
+    .header-title {
+      font-size: $font-title-mobile;
+    }
+  }
+}

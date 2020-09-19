@@ -1,0 +1,65 @@
+.module-tabs {
+  border-radius: 30px;
+  background: map-get($color, secondary);
+
+  .tabs {
+    > ul {
+      display: flex;
+      align-items: stretch;
+
+      > li {
+        flex-grow: 1;
+
+        &.active {
+          button {
+            color: map-get($color, primary);
+            background: map-get($color, secondary);
+          }
+        }
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 16px 32px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: white;
+        border: 0;
+        background: map-get($color, primary);
+      }
+    }
+  }
+
+  .content-tab {
+    padding: 40px 20px;
+
+    > .group-button {
+      > ul {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet-portrait-up){
+    .content-tab {
+      padding: 40px 20px 20px;
+    }
+
+    .table-wrap {
+      margin: 20px 0 0;
+    }
+  }
+
+  @media screen and (max-width: $tablet-portrait-down){
+    margin: 0 -20px;
+
+    .content-tab {
+      padding: 20px;
+    }
+    
+    .table-wrap {
+      margin: 20px 0 0;
+    }
+  }
+}

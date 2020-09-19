@@ -1,3 +1,12 @@
 .container {
-  
+  padding: 0 20px;
+  margin: 0 auto;
+
+  &.container-small {
+    max-width: 640px;
+  }
+
+  &.container-medium {
+    max-width: 980px;
+  }
 }

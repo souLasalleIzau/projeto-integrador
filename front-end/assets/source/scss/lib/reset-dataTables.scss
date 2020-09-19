@@ -1,0 +1,66 @@
+.table-wrap {
+  overflow: auto;
+  padding-bottom: 24px;
+}
+
+#table-tasks_wrapper {
+  .dataTables_filter {
+    display: none;
+  }
+
+  .content-modal-task {
+    display: none;
+  }
+}
+
+.dataTables_wrapper {
+  .dataTables_length {
+    display: none;
+  }
+
+  .dataTables_filter {
+    input {
+      margin: 16px;
+      padding: 8px 16px;
+    }
+  }
+
+  .dataTable {
+    padding: 16px 0;
+
+    .link-default {
+      font-weight: bold;
+      color: inherit;
+    }
+
+    thead {
+      th {
+        min-width: 150px;
+        text-align: left;
+        text-transform: uppercase;
+        border: 0;
+      }
+    }
+
+    tbody {
+      tr {
+        background: transparent;
+      }
+
+      td {
+        position: relative;
+      }
+    }
+
+    thead th,
+    tbody td {
+      padding: 16px;
+      border-top: 1px solid rgba(0,0,0,.1);
+      vertical-align: middle;
+    }
+
+    &.no-footer {
+      border-bottom: 0;
+    }
+  }
+}

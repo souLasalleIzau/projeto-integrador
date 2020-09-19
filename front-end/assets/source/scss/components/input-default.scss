@@ -10,7 +10,7 @@
       font-size: $font-size;
       color: map-get($color, primary);
       border-style: solid;
-      border-color: map-get($color, secondary);;
+      border-color: map-get($color, primaryLight);
 
       &.error {
         border-color: red;
@@ -64,7 +64,7 @@
 
       &:checked {
         + .input-checkbox-fake {
-          background: map-get($color, primary);
+          background: map-get($color, primaryLight);
         }
       }
     }
@@ -78,7 +78,7 @@
       min-height: 20px;
       top: 2px;
       margin-right: 16px;
-      border: 1px solid map-get($color, primary);
+      border: 1px solid map-get($color, primaryLight);
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.35s linear;

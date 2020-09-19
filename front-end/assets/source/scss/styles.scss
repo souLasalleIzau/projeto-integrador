@@ -10,16 +10,25 @@
 @import './fonts';
 @import './global';
 
+// Lib
+@import './lib/dataTables.min';
+@import './lib/reset-dataTables';
+
 // Commons
 @import './commons/container';
 @import './commons/background-image';
 
 // Components
 @import './components/header';
+@import './components/section-header';
 @import './components/button';
+@import './components/link';
+@import './components/form';
 @import './components/input-default';
 @import './components/select-default';
+@import './components/module-tabs';
+@import './components/module-text';
 @import './components/footer';
 
-// Modules
-@import './modules/home';
+// Pages
+@import './pages/login';

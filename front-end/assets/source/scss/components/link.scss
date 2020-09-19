@@ -1,0 +1,16 @@
+.link-default {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  > span {
+    + svg {
+      margin-left: 8px;
+    }
+  }
+}
