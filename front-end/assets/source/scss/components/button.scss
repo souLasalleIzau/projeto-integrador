@@ -41,6 +41,19 @@
 }
 
 .group-button {
+
+  &.align-end {
+    > ul {
+      justify-content: flex-end;
+    }
+  }
+
+  &.align-start {
+    > ul {
+      justify-content: flex-start;
+    }
+  }
+
   > ul {
     display: flex;
     align-items: stretch;

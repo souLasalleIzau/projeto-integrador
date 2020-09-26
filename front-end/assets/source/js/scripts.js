@@ -13,6 +13,7 @@ import { validate } from './lib/validate';
 import { dataTables } from './lib/dataTables';
 
 import { input } from './components/input';
+import { moduleTabs } from './components/module-tabs';
 
 let beforeDevice;
 let currentDevice; 
@@ -34,6 +35,7 @@ $(document).ready(() => {
 
   // components
   input();
+  moduleTabs();
 });
 
 $(window).on('resize', () => {

@@ -17,6 +17,18 @@ body {
     }
   }
 
+  .space {
+    display: block;
+    
+    &.space-top-medium {
+      margin-top: 24px;
+    }
+    
+    &.space-bottom-medium {
+      margin-bottom: 24px;
+    }
+  }
+
   .logout {
     position: absolute;
     top: 20px;

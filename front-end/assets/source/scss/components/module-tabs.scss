@@ -31,12 +31,19 @@
     }
   }
 
-  .content-tab {
-    padding: 40px 20px;
+  .contents {
+    .content-tab {
+      display: none;
+      padding: 40px 20px;
 
-    > .group-button {
-      > ul {
-        justify-content: flex-end;
+      &:first-child {
+        display: block;
+      }
+  
+      > .group-button {
+        > ul {
+          justify-content: flex-end;
+        }
       }
     }
   }
