@@ -1,4 +1,6 @@
 # Node - Modules
+back-end/node_modules
+back-end/package-lock.json
 front-end/assets/node_modules
 front-end/assets/package-lock.json
 
