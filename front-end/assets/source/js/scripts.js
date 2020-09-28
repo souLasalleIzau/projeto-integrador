@@ -13,6 +13,7 @@ import { validate } from './lib/validate';
 import { dataTables } from './lib/dataTables';
 
 import { input } from './components/input';
+import { moduleTabs } from './components/module-tabs';
 
 import { getAllUsers } from './request/request';
 
@@ -36,6 +37,7 @@ $(document).ready(() => {
 
   // components
   input();
+  moduleTabs();
 
   // Request
   getAllUsers();

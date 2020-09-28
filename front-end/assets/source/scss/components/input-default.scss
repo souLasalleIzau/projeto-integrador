@@ -52,6 +52,26 @@
       }
     }
   }
+
+  &.input-secondary {
+    .input-wrap {
+      .input-label {
+        display: block;
+        font-size: $font-size;
+        color: map-get($color, primary);
+        margin-bottom: 16px;
+        transform: translate(0) scale(0.8);
+        transform-origin: 0;
+        transition: transform 0.35s linear;
+      }
+
+      .input-field {
+        padding: 24px 16px;
+        border-width: 1px;
+        border-radius: 0;
+      }
+    }
+  }
 }
 
 .input-checkbox {
