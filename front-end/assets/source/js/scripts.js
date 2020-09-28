@@ -14,6 +14,8 @@ import { dataTables } from './lib/dataTables';
 
 import { input } from './components/input';
 
+import { getAllUsers } from './request/request';
+
 let beforeDevice;
 let currentDevice; 
 
@@ -34,6 +36,9 @@ $(document).ready(() => {
 
   // components
   input();
+
+  // Request
+  getAllUsers();
 });
 
 $(window).on('resize', () => {
