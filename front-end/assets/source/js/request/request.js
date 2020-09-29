@@ -1,13 +1,19 @@
-import axios from 'axios';
+import $ from 'jquery';
 
 export const getAllUsers = () => {
-  axios.get('localhost:3000/usuarios')
-    .then(function (response) {
-      // handle success
-      console.log(response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
+
+  $.get("http://localhost:3000/usuarios", function (data) {
+    console.log(data);
+  });
+}
+
+export const validLogin = (email, password, type) => {
+  email = "Alessandra";
+  password = "Ale123";
+
+  $.post("http://localhost:3000/login", { email, password, type }, function (data) {
+    if ((data || []).length) {
+      window.location.href = "http://localhost/projeto-integrador.local/front-end/home-gestor.html";
+    }
+  }); 
 }

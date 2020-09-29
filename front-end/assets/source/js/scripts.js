@@ -15,7 +15,10 @@ import { dataTables } from './lib/dataTables';
 import { input } from './components/input';
 import { moduleTabs } from './components/module-tabs';
 
-import { getAllUsers } from './request/request';
+import { 
+  getAllUsers,
+  validLogin
+} from './request/request';
 
 let beforeDevice;
 let currentDevice; 
@@ -41,6 +44,14 @@ $(document).ready(() => {
 
   // Request
   getAllUsers();
+
+  $('.form-login').on('submit', function (e) {
+    if ($(this).valid()) {
+      e.preventDefault();
+      console.log("enviando");
+      validLogin();
+    }
+  });
 });
 
 $(window).on('resize', () => {

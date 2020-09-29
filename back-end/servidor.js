@@ -2,7 +2,8 @@
 const mysql = require('mysql');
 const express = require('express');
 
-const app = express();         
+const app = express();
+const cors = require('cors')      
 const bodyParser = require('body-parser');
 const port = 3000; //porta padrão
 
@@ -11,11 +12,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //definindo as rotas
-const router = express.Router();
-app.use('/', router);
-
-//inicia o servidor
-app.listen(port);
+//const router = express.Router();
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 function execSQLQuery(sqlQry, res){
 
@@ -47,6 +48,14 @@ function execSQLQuery(sqlQry, res){
   });
 }
 
-router.get('/usuarios', (req, res) =>{
+app.get('/usuarios', cors(), (req, res) =>{
   execSQLQuery('SELECT * FROM usuario', res);
 });
+
+app.post('/login', cors(), (req, res) => {
+  const { email, password, type } = req.body;
+  execSQLQuery(`SELECT * FROM usuario WHERE nome = "${email}" and senha = "${password}`, res);
+});
+
+//inicia o servidor
+app.listen(port);
