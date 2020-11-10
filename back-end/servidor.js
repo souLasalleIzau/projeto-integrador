@@ -11,15 +11,14 @@ const port = 3000; //porta padrão
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//definindo as rotas
-//const router = express.Router();
+// Configurando acesso externo
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
 
+// Função para executar queries SQL
 function execSQLQuery(sqlQry, res){
-
   const connection = mysql.createConnection({
     host     : 'database-1.ct5n0pdvt6yl.us-east-1.rds.amazonaws.com',
     port     : 3306,
@@ -48,13 +47,14 @@ function execSQLQuery(sqlQry, res){
   });
 }
 
+//definindo as rotas
 app.get('/usuarios', cors(), (req, res) =>{
   execSQLQuery('SELECT * FROM usuario', res);
 });
 
 app.post('/login', cors(), (req, res) => {
   const { email, password, type } = req.body;
-  execSQLQuery(`SELECT * FROM usuario WHERE nome = "${email}" and senha = "${password}`, res);
+  execSQLQuery(`SELECT * FROM usuario WHERE nome = "${email}" and senha = "${password}"`, res);
 });
 
 //inicia o servidor

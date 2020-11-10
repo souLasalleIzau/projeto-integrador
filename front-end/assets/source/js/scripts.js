@@ -17,7 +17,7 @@ import { moduleTabs } from './components/module-tabs';
 
 import { 
   getAllUsers,
-  validLogin
+  validateLogin
 } from './request/request';
 
 let beforeDevice;
@@ -48,8 +48,12 @@ $(document).ready(() => {
   $('.form-login').on('submit', function (e) {
     if ($(this).valid()) {
       e.preventDefault();
-      console.log("enviando");
-      validLogin();
+
+      const email = $(this).find('#login-email').val();
+      const password = $(this).find('#login-password').val();
+      const profile = $(this).find('#login-profile').val();
+
+      validateLogin({ email, password, profile });
     }
   });
 });
