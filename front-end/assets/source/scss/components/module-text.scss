@@ -1,6 +1,5 @@
 .module-text {
   .text-default {
-
     p {
       + p {
         margin-top: 16px;
@@ -13,6 +12,7 @@
       font-size: 0.875em;
       font-weight: bold;
     }
+    color: map-get($color, mainColor);
   }
 
   .group-button {
@@ -21,13 +21,13 @@
     }
   }
 
-  @media screen and (min-width: $tablet-portrait-up){
+  @media screen and (min-width: $tablet-portrait-up) {
     .group-button {
       margin-top: 48px;
     }
   }
 
-  @media screen and (max-width: $tablet-portrait-down){
+  @media screen and (max-width: $tablet-portrait-down) {
     .group-button {
       margin-top: 32px;
     }
