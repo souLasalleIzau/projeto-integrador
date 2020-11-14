@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="app">
-    <div id="page-register-message">
+    <div id="page-register-challenge">
       <div class="screen-height">
         <div class="wrap">
           <div class="container container-small">
@@ -16,7 +16,7 @@
               <h1 class="header-title">Informe os dados do desafio</h1>
             </div>
             <div class="form">
-              <form class="form-register-user">
+              <form class="form-register-challenge">
                 <fieldset>
                   <div class="input-row three-columns">
                     <div class="input-column">
@@ -30,16 +30,16 @@
                     <div class="input-column">
                       <div class="input-default input-primary">
                         <div class="input-wrap">
-                          <label for="register-challenge-duration" class="input-label">Duração</label>
-                          <input type="text" name="register_challenge_duration" id="register-challenge-duration" class="input-field" />
+                          <label for="register-challenge-time" class="input-label">Duração</label>
+                          <input type="text" name="register_challenge_time" id="register-challenge-time" class="input-field" />
                         </div>
                       </div>
                     </div>
                     <div class="input-column">
                       <div class="input-default input-primary">
                         <div class="input-wrap">
-                          <label for="register-challenge-lorem" class="input-label">Lorem Ipsum</label>
-                          <input type="text" name="register_challenge_lorem" id="register-challenge-lorem" class="input-field" />
+                          <label for="register-challenge-code" class="input-label">Código</label>
+                          <input type="text" name="register_challenge_code" id="register-challenge-code" class="input-field" />
                         </div>
                       </div>
                     </div>
@@ -56,12 +56,47 @@
                   </div>
                   <div class="input-row">
                     <div class="input-column">
-                      <div class="module-register">
-                        <div class="blocks">
-                          <div class="block block-left"></div>
-                          <div class="block block-right"></div>
+                      <div class="input-default input-secondary">
+                        <div class="input-wrap">
+                          <label for="register-challenge-luck" class="input-label">Sorte</label>
+                          <textarea name="register_challenge_luck" id="register-challenge-luck" class="input-field"></textarea>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div class="input-row">
+                    <div class="input-column">
+                      <div class="input-default input-secondary">
+                        <div class="input-wrap">
+                          <label for="register-challenge-bad-luck" class="input-label">Revez</label>
+                          <textarea name="register_challenge_bad_luck" id="register-challenge-bad-luck" class="input-field"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-row">
+                    <div class="input-column">
+                      <div class="module-blocks">
+                        <div class="blocks">
+                          <div class="block block-left">
+                            <label for="user-0" class="single-user-name">
+                              Apenas um teste
+                            </label>
+                          </div>
+                          <div class="block block-right">
+                            <input type="checkbox" id="user-0" class="user-list" value="email" />
+                            <span class="single-user-name">
+                              Apenas um teste
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-row">
+                    <div class="input-column">
+                      <input type="checkbox" name="register_challenge_status" id="register-challenge-status" />
+                      Ativo
                     </div>
                   </div>
                   <div class="input-row">

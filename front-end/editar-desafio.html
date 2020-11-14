@@ -1,94 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Projeto integrador - cadastro de usuário</title>
+  <title>Projeto integrador - editar desafio</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <div id="app">
-    <div id="page-register-user">
+    <div id="page-edit-challenge">
       <div class="screen-height">
         <div class="wrap">
           <div class="container container-small">
             <div class="section-header">
-              <h1 class="header-title">Informe os dados para cadastro</h1>
+              <h1 class="header-title">Informe os dados do desafio</h1>
             </div>
             <div class="form">
-              <form class="form-register-user">
+              <form class="form-edit-challenge">
                 <fieldset>
-                  <div class="input-row">
+                  <div class="input-row three-columns">
                     <div class="input-column">
                       <div class="input-default input-primary">
                         <div class="input-wrap">
-                          <label for="register-name" class="input-label">Nome</label>
-                          <input type="text" name="register_name" id="register-name" class="input-field" />
+                          <label for="edit-challenge-name" class="input-label active">Nome</label>
+                          <input type="text" name="edit_challenge_name" id="edit-challenge-name" class="input-field" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-column">
+                      <div class="input-default input-primary">
+                        <div class="input-wrap">
+                          <label for="edit-challenge-time" class="input-label active">Duração</label>
+                          <input type="text" name="edit_challenge_time" id="edit-challenge-time" class="input-field" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-column">
+                      <div class="input-default input-primary">
+                        <div class="input-wrap">
+                          <label for="edit-challenge-code" class="input-label active">Código</label>
+                          <input type="text" name="edit_challenge_code" id="edit-challenge-code" class="input-field" readonly />
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="input-row">
                     <div class="input-column">
-                      <div class="input-default input-primary">
+                      <div class="input-default input-secondary">
                         <div class="input-wrap">
-                          <label for="register-email" class="input-label">Email</label>
-                          <input type="email" name="register_email" id="register-email" class="input-field" />
+                          <label for="edit-challenge-description" class="input-label">Descrição</label>
+                          <textarea name="edit_challenge_description" id="edit-challenge-description" class="input-field"></textarea>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="input-row">
                     <div class="input-column">
-                      <div class="input-default input-primary">
+                      <div class="input-default input-secondary">
                         <div class="input-wrap">
-                          <label for="register-profile" class="input-label active">Perfil</label>
-                          <select id="register-profile" name="register_profile" class="select-field">
-                            <option value="usuario">Usuário</option>
-                            <option value="gestor">Gestor</option>
-                          </select>
+                          <label for="edit-challenge-luck" class="input-label">Sorte</label>
+                          <textarea name="edit_challenge_luck" id="edit-challenge-luck" class="input-field"></textarea>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="input-row">
                     <div class="input-column">
-                      <div class="input-default input-primary">
+                      <div class="input-default input-secondary">
                         <div class="input-wrap">
-                          <label for="register-password" class="input-label">Senha</label>
-                          <input type="password" name="register_password" id="register-password" class="input-field" />
+                          <label for="edit-challenge-bad-luck" class="input-label">Revez</label>
+                          <textarea name="edit_challenge_bad_luck" id="edit-challenge-bad-luck" class="input-field"></textarea>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="input-row">
                     <div class="input-column">
-                      <div class="input-default input-primary">
-                        <div class="input-wrap">
-                          <label for="register-skill-1" class="input-label">Habilidade 1</label>
-                          <input type="text" name="register_skill_1" id="register-skill-1" class="input-field" />
+                      <div class="module-blocks">
+                        <div class="blocks">
+                          <div class="block block-left"></div>
+                          <div class="block block-right"></div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="input-row">
                     <div class="input-column">
-                      <div class="input-default input-primary">
-                        <div class="input-wrap">
-                          <label for="register-skill-2" class="input-label">Habilidade 2</label>
-                          <input type="text" name="register_skill_2" id="register-skill-2" class="input-field" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input-row">
-                    <div class="input-column">
-                      <div class="input-default input-primary">
-                        <div class="input-wrap">
-                          <label for="register-skill-3" class="input-label">Habilidade 3</label>
-                          <input type="text" name="register_skill_3" id="register-skill-3" class="input-field" />
-                        </div>
-                      </div>
+                      <input type="checkbox" name="edit_challenge_status" id="edit-challenge-status" />
+                      Ativo
                     </div>
                   </div>
                   <div class="input-row">
@@ -96,13 +95,13 @@
                       <div class="group-button">
                         <ul>
                           <li>
-                            <a href="home-gestor.html" class="button-default button-stroke-primary">
+                            <a href="archive-desafio-gestor.html" class="button-default button-stroke-primary">
                               <span>Voltar</span>
                             </a>
                           </li>
                           <li>
                             <button type="submit" class="button-default button-fill-primary">
-                              <span>Cadastrar</span>
+                              <span>Editar desafio</span>
                             </button>
                           </li>
                         </ul>

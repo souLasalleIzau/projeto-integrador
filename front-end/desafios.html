@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <div id="page-home-manager">
+      <div id="page-challenges-user">
         <div class="screen-height">
           <div class="wrap">
             <div class="container container-medium">
@@ -20,13 +20,15 @@
                   <div class="content-tab">
                     <div class="table-wrap">
                       <table
-                        id="users-table"
+                        id="user-challenges-table"
                         class="table-dataTables"
                         style="width: 100%"
                       >
                         <thead>
                           <tr>
-                            <th>Título</th>
+                            <th>Nome</th>
+                            <th>Código</th>
+                            <th>Descrição</th>
                             <th>Duração</th>
                             <th>Status</th>
                           </tr>
@@ -34,43 +36,17 @@
                         <tbody>
                           <tr>
                             <td>
-                              <a
-                                href="visualizar-desafio.html"
-                                class="link-default"
-                              >
-                                <span>Desafio 1</span>
+                              <a href="visualizar-desafio.html" class="link-default">
+                                <span></span>
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                </svg>
                               </a>
                             </td>
-                            <td>-</td>
-                            <td>
-                              <a href="fornecedores.html" class="link-default">
-                                <span>Aguardando Início</span>
-                              </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a
-                                href="visualizar-desafio.html"
-                                class="link-default"
-                              >
-                                <span>Desafio 2</span>
-                              </a>
-                            </td>
-                            <td>35 min</td>
-                            <td>Concluído</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a
-                                href="visualizar-desafio.html"
-                                class="link-default"
-                              >
-                                <span>Desafio 3</span>
-                              </a>
-                            </td>
-                            <td>57 min</td>
-                            <td>Concluído</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                           </tr>
                         </tbody>
                       </table>
@@ -93,7 +69,7 @@
                 </a>
               </li>
               <li>
-                <a href="login.html" class="button-default button-fill-primary">
+                <a href="login.html" id="logout" class="button-default button-fill-primary">
                   <span>Sair</span>
                 </a>
               </li>

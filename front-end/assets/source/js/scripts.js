@@ -15,10 +15,22 @@ import { dataTables } from './lib/dataTables';
 import { input } from './components/input';
 import { moduleTabs } from './components/module-tabs';
 
-import { 
-  getAllUsers,
-  validateLogin
-} from './request/request';
+// USERS
+import { viewLogin } from './views/viewLogin';
+import { viewUsersTable } from './views/viewUsersTable';
+import { viewProfile } from './views/viewProfile';
+import { viewRegisterUser } from './views/viewRegisterUser';
+import { viewEditUser } from './views/viewEditUser';
+import { viewUserChallengesTable } from './views/viewUserChallengesTable';
+import { viewUserProfile } from './views/viewUserProfile';
+
+// CHALLENGES
+import { viewRegisterChallenge } from './views/viewRegisterChallenge';
+import { viewChallengesTable } from './views/viewChallengesTable';
+import { viewEditChallenge } from './views/viewEditChallenge';
+import { viewChallenge } from './views/viewChallenge';
+
+import { logout } from './request/request';
 
 let beforeDevice;
 let currentDevice; 
@@ -32,30 +44,35 @@ $(document).ready(() => {
   screenHeight();
   backgroundImage();
 
-  // lib
-  masked();
-  select2();
-  validate();
-  dataTables();
+  // Backend integration 
+  viewLogin();
+  viewUsersTable();
+  viewProfile();
+  viewRegisterUser();
+  viewEditUser();
+  viewUserChallengesTable();
+  viewUserProfile();
+
+  viewRegisterChallenge();
+  viewChallengesTable();
+  viewEditChallenge();
+  viewChallenge();
+
+  $('#logout').on('click', function (e) {
+    e.preventDefault();
+
+    logout();
+  });
 
   // components
   input();
   moduleTabs();
 
-  // Request
-  getAllUsers();
-
-  $('.form-login').on('submit', function (e) {
-    if ($(this).valid()) {
-      e.preventDefault();
-
-      const email = $(this).find('#login-email').val();
-      const password = $(this).find('#login-password').val();
-      const profile = $(this).find('#login-profile').val();
-
-      validateLogin({ email, password, profile });
-    }
-  });
+  // lib
+  masked();
+  select2();
+  validate();
+  dataTables();
 });
 
 $(window).on('resize', () => {

@@ -1,28 +1,180 @@
-import $ from 'jquery';
+const BASE_URL = "http://localhost/projeto-integrador.local/front-end/";
 
-export const getAllUsers = () => {
+export const logout = () => {
+  localStorage.removeItem('user');
 
-  $.get("http://localhost:3000/usuarios", function (data) {
-    console.log(data);
-  });
+  window.location.href = `${BASE_URL}login.html`;
+}
+
+
+// USERS
+
+export const getCurrentUser = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  return user;
+}
+
+export const isUser = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  
+  return user.profile === "usuario";
+}
+
+export const isManager = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  
+  return user.profile === "gestor";
+}
+
+export const listAllUsers = () => {
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  return users;
+}
+
+export const listUsers = () => {
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  return users.filter(user => user.profile === "usuario");
+}
+
+export const listManager = () => {
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  return users.filter(user => user.profile === "gestor");
+}
+
+export const getUser = email => {
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  return users.filter(user => user.email === email);
 }
 
 export const validateLogin = ({ email, password, profile }) => {
-  email = "Alessandra";
-  password = "Ale123";
 
-  $.post("http://localhost:3000/login", { email, password, profile }, function (data) {
-    if ((data || []).length) {
-      window.location.href = "http://localhost/projeto-integrador.local/front-end/home-gestor.html";
+  if (email === "admin@admin.com.br" && password === "admin") {
+    window.location.href = `${BASE_URL}home-gestor.html`;
+  } else {
+    const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+    if (users.length) {
+      const user = users.filter(user => user.email === email && user.password === password && user.profile === profile);
+    
+      if (user.length) {
+        localStorage.setItem('user', JSON.stringify(user));
+
+        if (profile === "gestor") {
+          window.location.href = `${BASE_URL}home-gestor.html`;
+        } else {
+          window.location.href = `${BASE_URL}desafios.html`;
+        }
+      }
     }
-  }); 
+  }
 }
 
-export const registerUser = ({  }) => {
+export const registerUser = ({ name, email, profile, password, skills }) => {
+  
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+  const registered = { name, email, profile, password, skills, challenges: [] };
 
-  $.post("http://localhost:3000/login", { email, password, profile }, function (data) {
-    if ((data || []).length) {
-      window.location.href = "http://localhost/projeto-integrador.local/front-end/home-gestor.html";
+  localStorage.setItem('users', JSON.stringify([...users, registered]));
+
+  window.location.href = `${BASE_URL}home-gestor.html`;
+}
+
+export const editUser = ({ name, email, profile, password, skills, challenges }) => {
+  
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  users.map(user => {
+    if (user.email === email) {
+      user.name = name;
+      user.profile = profile;
+      user.password = password;
+      user.skills = skills;
+      user.challenges = challenges;
     }
-  }); 
+  });
+
+  localStorage.setItem('users', JSON.stringify([...users]));
+
+  window.location.href = `${BASE_URL}home-gestor.html`;
+}
+
+
+// CHALLENGES
+
+export const listChallenges = () => {
+  const challenges = (JSON.parse(localStorage.getItem('challenges')) || []);
+
+  return challenges;
+}
+
+export const getChallenge = code => {
+  const challenges = (JSON.parse(localStorage.getItem('challenges')) || []);
+
+  return challenges.filter(challenge => challenge.code === code);
+}
+
+export const registerChallenge = ({ name, time, code, description, luck, bad_luck, players, status }) => {
+  
+  const challenges = (JSON.parse(localStorage.getItem('challenges')) || []);
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+  const registered = { name, time, code, description, luck, bad_luck, players, status };
+
+  users.map(user => {
+    if (players.includes(user.email)) {
+      user.challenges = [...user.challenges, { code }];
+    }
+  });
+  
+  localStorage.setItem('challenges', JSON.stringify([...challenges, registered]));
+  localStorage.setItem('users', JSON.stringify([...users]));
+
+  window.location.href = `${BASE_URL}archive-desafio-gestor.html`;
+}
+
+export const editChallenge = ({ name, time, code, description, luck, bad_luck, players, status }) => {
+  
+  const challenges = (JSON.parse(localStorage.getItem('challenges')) || []);
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  challenges.map(challenge => {
+    
+    users.map(user => {
+      let findChallenge = null;
+      user.challenges.map((userChallenge, index) => {
+        if (userChallenge.code === challenge.code) {
+          findChallenge = index;
+        }
+      });
+
+      if (challenge.players.includes(user.email) && !players.includes(user.email)) { // Remover os antigos
+        if (findChallenge !== null) { 
+          user.challenges.splice(findChallenge, 1);
+        }
+      } else if (players.includes(user.email)) { // Adicionar novos
+        if (findChallenge === null) {
+          user.challenges.push({ code: challenge.code });
+        }
+      }
+    });
+
+    if (challenge.code === code) {
+      challenge.name = name;
+      challenge.time = time;
+      challenge.description = description;
+      challenge.luck = luck;
+      challenge.bad_luck = bad_luck;
+      challenge.players = players;
+      challenge.status = status;
+    }
+  });
+
+  localStorage.setItem('challenges', JSON.stringify([...challenges]));
+  localStorage.setItem('users', JSON.stringify([...users]));
+
+  window.location.href = `${BASE_URL}archive-desafio-gestor.html`;
 }

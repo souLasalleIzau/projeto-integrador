@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Projeto integrador - Perfil</title>
+  <title>Projeto integrador - Desafio</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <div id="app">
-    <div id="page-profile">
+    <div id="page-challenge">
       <div class="screen-height">
         <div class="wrap">
           <div class="container container-medium">
@@ -22,11 +22,16 @@
                     <span>Voltar para listagem</span>
                   </a>
                 </li>
+                <li>
+                  <a href="editar-desafio.html" id="edit-challenge" class="button-default button-fill-primary">
+                    <span>Editar</span>
+                  </a>
+                </li>
               </ul>
             </div>
             <span class="space space-bottom-medium">&nbsp;</span>
             <div class="module-text">
-              <div class="text-default">
+              <div class="text-default" id="challenge-content">
                 <p>
                   <small>Nome: </small>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -149,7 +154,7 @@
         <div class="group-button">
           <ul>
             <li>
-              <a href="login.html" class="button-default button-fill-primary">
+              <a href="login.html" id="logout" class="button-default button-fill-primary">
                 <span>Sair</span>
               </a>
             </li>
