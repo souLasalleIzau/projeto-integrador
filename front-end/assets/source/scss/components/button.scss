@@ -9,7 +9,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.35s linear, color 0.35s linear, border 0.35s linear;
-  
+
   > span {
     position: relative;
     display: flex;
@@ -20,28 +20,27 @@
 
 .button-fill-primary {
   color: white;
-  background: map-get($color, primary);
-  border-color: map-get($color, primary);
+  background: map-get($color, mainColor);
+  border-color: map-get($color, mainColor);
 
   &:hover {
-    color: map-get($color, primary);
+    color: map-get($color, mainColor);
     background: transparent;
   }
 }
 
 .button-stroke-primary {
-  color: map-get($color, primary);
+  color: map-get($color, mainColor);
   background: transparent;
-  
+
   &:hover {
     color: white;
-    background: map-get($color, primary);
-    border-color: map-get($color, primary);
+    background: map-get($color, mainColor);
+    border-color: map-get($color, mainColor);
   }
 }
 
 .group-button {
-
   &.align-end {
     > ul {
       justify-content: flex-end;

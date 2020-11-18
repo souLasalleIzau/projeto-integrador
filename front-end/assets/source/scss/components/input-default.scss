@@ -8,9 +8,9 @@
       display: block;
       width: 100%;
       font-size: $font-size;
-      color: map-get($color, primary);
+      color: map-get($color, mainColor);
       border-style: solid;
-      border-color: map-get($color, primaryLight);
+      border-color: map-get($color, mainColorLight);
 
       &.error {
         border-color: red;
@@ -35,7 +35,7 @@
       .input-label {
         position: absolute;
         font-size: $font-size;
-        color: map-get($color, primary);
+        color: map-get($color, mainColor);
         transform: translateY(28px);
         transform-origin: 0;
         transition: transform 0.35s linear;
@@ -58,7 +58,7 @@
       .input-label {
         display: block;
         font-size: $font-size;
-        color: map-get($color, primary);
+        color: map-get($color, mainColor);
         margin-bottom: 16px;
         transform: translate(0) scale(0.8);
         transform-origin: 0;
@@ -84,7 +84,7 @@
 
       &:checked {
         + .input-checkbox-fake {
-          background: map-get($color, primaryLight);
+          background: map-get($color, mainColorLight);
         }
       }
     }
@@ -98,7 +98,7 @@
       min-height: 20px;
       top: 2px;
       margin-right: 16px;
-      border: 1px solid map-get($color, primaryLight);
+      border: 1px solid map-get($color, mainColorLight);
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.35s linear;
@@ -120,7 +120,7 @@
 
     .label-checkbox-fake {
       font-size: $font-size;
-      color: map-get($color, primary);
+      color: map-get($color, mainColor);
 
       small {
         font-size: 0.75em;

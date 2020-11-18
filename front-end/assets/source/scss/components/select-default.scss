@@ -7,7 +7,7 @@
   width: 100% !important;
 
   &.select2-container--open {
-    .selection  .select2-selection {
+    .selection .select2-selection {
       .select2-selection__arrow > b {
         transform: translateY(25%) rotate(-135deg);
       }
@@ -25,10 +25,10 @@
       height: 64px;
       padding: 24px 16px 16px 0;
       font-size: $font-size;
-      color: map-get($color, primary);
+      color: map-get($color, mainColor);
       border-width: 0 0 1px 0;
       border-style: solid;
-      border-color: map-get($color, primaryLight);;
+      border-color: map-get($color, mainColorLight);
       border-radius: 0;
       outline: none;
 
@@ -47,7 +47,7 @@
           height: 14px;
           border-width: 0 2px 2px 0;
           border-style: solid;
-          border-color: map-get($color, primaryLight);
+          border-color: map-get($color, mainColorLight);
           top: 50%;
           left: 50%;
           transition: transform 0.35s linear;
@@ -78,7 +78,7 @@
     .select2-search {
       display: block;
       padding: 20px 20px 0 20px;
-      
+
       > input {
         display: block;
         width: 100%;
@@ -102,7 +102,7 @@
           cursor: pointer;
 
           + li {
-            border-top: 1px solid map-get($color, primaryLight);;
+            border-top: 1px solid map-get($color, mainColorLight);
           }
 
           // &.select2-results__option--highlighted {

@@ -1,4 +1,4 @@
-.module-blocks {
+.module-register {
   .blocks {
     position: relative;
 
@@ -18,38 +18,6 @@
       height: 200px;
       border: 1px solid map-get($color, mainColorLight);
       overflow: auto;
-
-      .single-user-name {
-        display: block;
-        padding: 8px 16px;
-        color: map-get($color, mainColor);
-
-        &:nth-of-type(even) {
-          background-color: map-get($color, secondary);
-        }
-      }
-
-      &.block-left {
-        .single-user-name {
-          cursor: pointer;
-        }
-      }
-
-      &.block-right {
-        input.user-list {
-          display: none;
-
-          &:checked {
-            + .single-user-name {
-              display: block;
-            }
-          }
-        }
-
-        .single-user-name {
-          display: none;
-        }
-      }
     }
   }
 
