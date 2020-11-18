@@ -14,16 +14,13 @@ export const viewUserChallengesTable = () => {
     $challengesTable.find('tbody').empty();
     
     const user = getCurrentUser()[0];
-    const challenges = user.challenges.map(challenge => getChallenge(challenge.code))[0];
-
-    console.log(user.challenges, challenges)
-    
+    const challenges = user.challenges.map(challenge => getChallenge(challenge.code))[0];    
     
     challenges.map(challenge => {
       const $tr = $trClone.clone();
       
       const href = $tr.find('td:nth-child(1) a').attr('href');
-      $tr.find('td:nth-child(1) a').attr('href', `${href}?code=${challenge.code}`);
+      $tr.find('td:nth-child(1) a').attr('href', `${href}?user=${user.email}&code=${challenge.code}`);
       $tr.find('td:nth-child(1) span').text(challenge.name);
       $tr.find('td:nth-child(2)').text(challenge.code);
       $tr.find('td:nth-child(3)').text(challenge.description);

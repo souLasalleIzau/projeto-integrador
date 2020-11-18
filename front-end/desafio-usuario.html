@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <div id="page-register-message">
+      <div id="page-register-response">
         <div class="screen-height">
           <div class="wrap">
             <div class="container container-small">
@@ -16,32 +16,33 @@
                 <h1 class="header-title">Desafio</h1>
               </div>
               <div class="form">
-                <form class="form-register-user">
+                <form class="form-register-response">
                   <fieldset>
                     <div class="input-row">
                       <div class="input-column">
                         <div class="input-default input-secondary">
                           <div class="input-wrap">
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Vestibulum id nunc in orci ullamcorper
-                              consectetur. Proin nunc velit, fermentum vel ante
-                              quis, faucibus cursus lacus. Fusce dolor neque,
-                              euismod in maximus et, tincidunt non eros. Proin
-                              justo nibh, vehicula sit amet laoreet sit amet,
-                              dignissim vitae sapien. Morbi ac euismod justo.
-                              Nullam ut neque sed ligula porttitor ornare.
-                            </p>
+                            <div id="challenge-description"></div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="input-row">
                       <div class="input-column">
-                        <div class="module-register">
+                        <div class="module-blocks">
                           <div class="blocks">
                             <div class="block block-left"></div>
                             <div class="block block-right"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-row">
+                      <div class="input-column">
+                        <div class="input-default input-secondary">
+                          <div class="input-wrap">
+                            <label for="register-solution" class="input-label">Solução</label>
+                            <textarea name="register_solution" id="register-solution" class="input-field"></textarea>
                           </div>
                         </div>
                       </div>
@@ -52,19 +53,18 @@
                           <ul>
                             <li>
                               <a
-                                href="fornecedores.html"
+                                href="desafios.html"
                                 class="button-default button-stroke-primary"
                               >
                                 <span>Voltar</span>
                               </a>
                             </li>
                             <li>
-                              <a
-                                href="sorte-revez.html"
-                                class="button-default button-fill-primary"
-                              >
+                              <button 
+                                type="submit"
+                                class="button-default button-fill-primary">
                                 <span>Prosseguir</span>
-                              </a>
+                              </button>
                             </li>
                           </ul>
                         </div>

@@ -23,6 +23,8 @@ import { viewRegisterUser } from './views/viewRegisterUser';
 import { viewEditUser } from './views/viewEditUser';
 import { viewUserChallengesTable } from './views/viewUserChallengesTable';
 import { viewUserProfile } from './views/viewUserProfile';
+import { viewRegisterResponse } from './views/viewRegisterResponse';
+import { viewRegisterLuck } from './views/viewRegisterLuck';
 
 // CHALLENGES
 import { viewRegisterChallenge } from './views/viewRegisterChallenge';
@@ -52,6 +54,8 @@ $(document).ready(() => {
   viewEditUser();
   viewUserChallengesTable();
   viewUserProfile();
+  viewRegisterResponse();
+  viewRegisterLuck();
 
   viewRegisterChallenge();
   viewChallengesTable();

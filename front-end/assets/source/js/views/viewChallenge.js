@@ -45,6 +45,8 @@ export const viewChallenge = () => {
       if (players.length) {
         players.map((player, index) => {
         
+          const challengePlayer = player.challenges.filter(playerChallenge => playerChallenge.code === challenge.code)[0]
+
           $tabs.find('ul').append(`
             <li class="${!index && 'active'}">
               <button type="button">
@@ -78,18 +80,34 @@ export const viewChallenge = () => {
                       <small>Habilidade 3: </small>
                       ${player.skills[2]}
                     </p>
+                    ${challengePlayer && (`
+                      <p>
+                        <small>Solução: </small>
+                        ${challengePlayer.solution}
+                      </p>
+                      <p>
+                        <small>Sorte: </small>
+                        ${challengePlayer.solution_luck}
+                      </p>
+                      <p>
+                        <small>Revez: </small>
+                        ${challengePlayer.solution_bad_luck}
+                      </p>
+                    `) || ""}
                   </div>
                 </div>
-                <span class="space space-top-medium">&nbsp;</span>
-                <div class="group-button">
-                  <ul>
-                    <li>
-                      <a href="editar-usuario.html?email=${player.email}" class="button-default button-fill-primary">
-                        <span>Avaliar</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                ${challengePlayer && (`
+                  <span class="space space-top-medium">&nbsp;</span>
+                  <div class="group-button">
+                    <ul>
+                      <li>
+                        <a href="editar-usuario.html?email=${player.email}" class="button-default button-fill-primary">
+                          <span>Avaliar</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                `) || ""}
               </div>
             </div>
           `);

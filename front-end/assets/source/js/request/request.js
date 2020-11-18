@@ -103,6 +103,38 @@ export const editUser = ({ name, email, profile, password, skills, challenges })
   window.location.href = `${BASE_URL}home-gestor.html`;
 }
 
+export const registerResponse = ({ userEmail, code, solution, chosenSuppliers }) => {
+  
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+  users.map(user => {
+    if (user.email === userEmail) {
+      const challenge = user.challenges.filter(challenge => challenge.code === code)[0];
+      challenge.solution = solution;
+      challenge.supplier = chosenSuppliers;
+    }
+  });
+
+  localStorage.setItem('users', JSON.stringify([...users]));
+
+  window.location.href = `${BASE_URL}sorte-revez.html?user=${userEmail}&code=${code}`;
+}
+
+export const registerLuck = ({ userEmail, code, solution_luck, solution_bad_luck }) => {
+  
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+  users.map(user => {
+    if (user.email === userEmail) {
+      const challenge = user.challenges.filter(challenge => challenge.code === code)[0];
+      challenge.solution_luck = solution_luck;
+      challenge.solution_bad_luck = solution_bad_luck;
+    }
+  });
+
+  localStorage.setItem('users', JSON.stringify([...users]));
+
+  window.location.href = `${BASE_URL}desafios.html`;
+}
+
 
 // CHALLENGES
 

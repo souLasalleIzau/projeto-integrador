@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <div id="page-register-message">
+      <div id="page-register-luck">
         <div class="screen-height">
           <div class="wrap">
             <div class="container container-small">
@@ -16,27 +16,18 @@
                 <h1 class="header-title">Sorte ou Revez</h1>
               </div>
               <div class="form">
-                <form class="form-register">
+                <form class="form-register-luck">
                   <fieldset>
                     <div class="input-row">
                       <div class="input-column">
                         <div class="input-default input-secondary">
                           <div class="input-wrap">
                             <label
-                              for="register-challenge-description"
+                              for="register-challenge-luck"
                               class="input-label"
-                              >Descrição</label
+                              >Sorte</label
                             >
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Vestibulum id nunc in orci ullamcorper
-                              consectetur. Proin nunc velit, fermentum vel ante
-                              quis, faucibus cursus lacus. Fusce dolor neque,
-                              euismod in maximus et, tincidunt non eros. Proin
-                              justo nibh, vehicula sit amet laoreet sit amet,
-                              dignissim vitae sapien. Morbi ac euismod justo.
-                              Nullam ut neque sed ligula porttitor ornare.
-                            </p>
+                            <p id="content-luck"></p>
                           </div>
                         </div>
                       </div>
@@ -46,13 +37,45 @@
                         <div class="input-default input-secondary">
                           <div class="input-wrap">
                             <label
-                              for="register-challenge-description"
+                              for="register-challenge-luck"
                               class="input-label"
                               >Informe como proceder</label
                             >
                             <textarea
-                              name="register_challenge_description"
-                              id="register-challenge-description"
+                              name="register_challenge_luck"
+                              id="register-challenge-luck"
+                              class="input-field"
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-row">
+                      <div class="input-column">
+                        <div class="input-default input-secondary">
+                          <div class="input-wrap">
+                            <label
+                              for="register-challenge-bad-luck"
+                              class="input-label"
+                              >Revez</label
+                            >
+                            <p id="content-bad-luck"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-row">
+                      <div class="input-column">
+                        <div class="input-default input-secondary">
+                          <div class="input-wrap">
+                            <label
+                              for="register-challenge-bad-luck"
+                              class="input-label"
+                              >Informe como proceder</label
+                            >
+                            <textarea
+                              name="register_challenge_bad_luck"
+                              id="register-challenge-bad-luck"
                               class="input-field"
                             ></textarea>
                           </div>
@@ -66,7 +89,7 @@
                             <li>
                               <a
                                 href="desafio-usuario.html"
-                                class="button-default button-stroke-primary"
+                                class="button-default button-stroke-primary back-button"
                               >
                                 <span>Voltar</span>
                               </a>
