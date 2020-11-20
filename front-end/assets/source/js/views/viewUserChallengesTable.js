@@ -25,7 +25,7 @@ export const viewUserChallengesTable = () => {
       $tr.find('td:nth-child(2)').text(challenge.code);
       $tr.find('td:nth-child(3)').text(challenge.description);
       $tr.find('td:nth-child(4)').text(challenge.time);
-      $tr.find('td:nth-child(5)').text(challenge.status);
+      $tr.find('td:nth-child(5)').text(challenge.status ? "ativo" : "inativo");
 
       $body.append($tr);
     });

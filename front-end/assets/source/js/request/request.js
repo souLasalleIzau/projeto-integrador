@@ -60,7 +60,7 @@ export const validateLogin = ({ email, password, profile }) => {
 
     if (users.length) {
       const user = users.filter(user => user.email === email && user.password === password && user.profile === profile);
-    
+
       if (user.length) {
         localStorage.setItem('user', JSON.stringify(user));
 
@@ -101,6 +101,32 @@ export const editUser = ({ name, email, profile, password, skills, challenges })
   localStorage.setItem('users', JSON.stringify([...users]));
 
   window.location.href = `${BASE_URL}home-gestor.html`;
+}
+
+export const registerMessageUser = ({ message, email }) => {
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  users.map(user => {
+    if (user.email === email) {
+      user.message = message;
+    }
+  });
+
+  localStorage.setItem('users', JSON.stringify([...users]));
+
+  window.location.href = `${BASE_URL}home-gestor.html`;
+}
+
+export const clearMessageUser = ({ email }) => {
+  const users = (JSON.parse(localStorage.getItem('users')) || []);
+
+  users.map(user => {
+    if (user.email === email) {
+      user.message = "";
+    }
+  });
+
+  localStorage.setItem('users', JSON.stringify([...users]));
 }
 
 export const registerResponse = ({ userEmail, code, solution, chosenSuppliers }) => {
