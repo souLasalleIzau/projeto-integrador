@@ -69,15 +69,15 @@ export const viewChallenge = () => {
                       ${player.email}
                     </p>
                     <p>
-                      <small>Habilidade 1: </small>
+                      <small>Senso crítico: </small>
                       ${player.skills[0]}
                     </p>
                     <p>
-                      <small>Habilidade 2: </small>
+                      <small>Trabalhar sob pressão: </small>
                       ${player.skills[1]}
                     </p>
                     <p>
-                      <small>Habilidade 3: </small>
+                      <small>Agilidade: </small>
                       ${player.skills[2]}
                     </p>
                     ${challengePlayer && (`
