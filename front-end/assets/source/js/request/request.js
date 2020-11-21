@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost/projeto-integrador.local/front-end/";
+const BASE_URL = "http://127.0.0.1:5500/front-end/";
 
 export const logout = () => {
   localStorage.removeItem('user');
